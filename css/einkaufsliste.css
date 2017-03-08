@@ -1,0 +1,119 @@
+body {
+  color: #fff;
+  margin-left: 15em;
+  margin-right: 15em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-family: sans-serif;
+  background: #ffffff;
+  box-shadow: 0 2px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+html {
+  background-color: white;
+}
+
+h1 {
+  font-weight: 400;
+  color: black;
+  border-bottom: 1px solid #cccccc;
+}
+
+input.artikel-eingeben {
+  line-height: 2em;
+  width: 40%;
+  text-align: left;
+  font-size: 0.8em;
+  padding-left: 0.5em;
+}
+
+button#input-absenden {
+  line-height: 2em;
+  margin-left: 1em;
+  font-size: 0.8em;
+  /* cursor: pointer; */
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.liste {
+  margin-top: 3em;
+  background-color: white;
+  color: #000;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 2em;
+  font-weight: 100;
+}
+
+.artikel {
+  display: inline-block;
+  width: 60%;
+  padding-top: 1em;
+  text-align: left;
+}
+
+.einheit {
+  display: inline-block;
+  width: 10%;
+}
+
+.menge {
+  display: inline-block;
+  width: 10%;
+}
+
+.spalte2 {
+  display: inline-block;
+  width: 10%;
+  border-bottom: 1px solid #ccc;
+}
+
+.spalte1 {
+  display: inline-block;
+  width: 10%;
+  border-bottom: 1px solid #ccc;
+}
+
+.spalte {
+  display: inline-block;
+  width: 60%;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+input.einheit-eingeben {
+  line-height: 2em;
+  width: 18%;
+  text-align: left;
+  font-size: 0.8em;
+  padding-left: 0.5em;
+}
+
+input.menge-eingeben {
+  line-height: 2em;
+  width: 18%;
+  text-align: left;
+  font-size: 0.8em;
+  padding-left: 0.5em;
+}
+
+.tabelle {
+  text-align: center;
+}
+
+.inhalt {
+  padding-bottom: 1.5em;
+}
+
+select {
+    width: 20%;
+    height: 2.9em;
+}

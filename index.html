@@ -9,7 +9,7 @@
   <meta name="keywords" content="liste, einkauf, einkaufsliste">
   <!-- Ermöglichen des Zoomens auf z.B. Mobilgeräten: -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="einkaufsliste.css">
+  <link rel="stylesheet" href="css/einkaufsliste.css">
   <!-- Es muss im 'head' immer genau ein 'title' angegeben werden: -->
   <title>Einkaufsliste</title>
 </head>
@@ -17,26 +17,50 @@
 <body>
   <h1>Einkaufsliste</h1>
   <div class="inhalt">
-    <div class="hinzufuegen">
-      <input type="text" class="input-hinzufuegen" placeholder="Benötigter Artikel" />
-      <a class="btn">Auf die Liste!</a>
-      <!-- <button type="button" class="input-absenden" text="Auf die Liste!">Auf die Liste!</button> -->
-    </div>
+    <form id="artikelForm">
+      <input type="text" class="artikel-eingeben" placeholder="Artikel eingeben" />
+      <select id="einheit-auswaehlen" size="1">
+        <option value="">Bitte auswählen...</option>
+        <option value="stueck">Stück</option>
+        <option value="gramm">Gramm</option>
+        <option value="kilogramm">Kilogramm</option>
+      </select>
+      <input type="text" class="menge-eingeben" placeholder="Menge eingeben" />
+      <button type="button" id="input-absenden" title="Klicke um Eintrag zu speichern!" disabled="disabled">Auf die Liste!</button>
+    </form>
     <div class="liste">
-      <p>Äpfel</p>
-      <p>Butter</p>
-      <p>Brot</p>
-      <p>Salami</p>
+      <div class="tabelle">
+        <!-- Tabellenkopf -->
+        <div class="tabellenkopf">
+          <div class="spalte">Artikel</div>
+          <div class="spalte1">Einheit</div>
+          <div class="spalte2">Menge</div>
+        </div>
+        <!-- Tabelleninhalt -->
+        <div class="tabellenzeile testklasse">
+          <div class="artikel">Äpfel</div>
+          <div class="einheit">Stück</div>
+          <div class="menge">10</div>
+        </div>
+        <div class="tabellenzeile">
+          <div class="artikel">Butter</div>
+          <div class="einheit">Stück</div>
+          <div class="menge">4</div>
+        </div>
+        <div class="tabellenzeile">
+          <div class="artikel">Vollkorn-Brot</div>
+          <div class="einheit">g</div>
+          <div class="menge">1000</div>
+        </div>
+        <div class="tabellenzeile">
+          <div class="artikel">Ungarische Salami</div>
+          <div class="einheit">g</div>
+          <div class="menge">250</div>
+        </div>
+      </div>
     </div>
-    <!-- <div class="liste">
-      <ul>
-        <li>Äpfel</li>
-        <li>Butter</li>
-        <li>Brot</li>
-        <li>Salami</li>
-      </ul>
-    </div> -->
   </div>
+  <script type="text/javascript" src="js/einkaufsliste.js"></script>
 </body>
 
 </html>
