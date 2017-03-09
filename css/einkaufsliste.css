@@ -97,7 +97,7 @@ input.einheit-eingeben {
   padding-left: 0.5em;
 }
 
-input.menge-eingeben {
+input#menge-eingeben {
   line-height: 2em;
   width: 18%;
   text-align: left;

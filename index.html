@@ -19,14 +19,14 @@
   <div class="inhalt">
     <form id="artikelForm">
       <input type="text" class="artikel-eingeben" placeholder="Artikel eingeben" />
-      <select id="einheit-auswaehlen" size="1">
-        <option value="">Bitte auswählen...</option>
-        <option value="stueck">Stück</option>
-        <option value="gramm">Gramm</option>
-        <option value="kilogramm">Kilogramm</option>
+      <select id="einheit-auswaehlen" size="1" title="Einheit auswählen...">
+        <option value="">Bitte ausw&auml;hlen...</option>
+        <option value="St&uuml;ck">St&uuml;ck</option>
+        <option value="Gramm">Gramm</option>
+        <option value="Kilogramm">Kilogramm</option>
       </select>
-      <input type="text" class="menge-eingeben" placeholder="Menge eingeben" />
-      <button type="button" id="input-absenden" title="Klicke um Eintrag zu speichern!" disabled="disabled">Auf die Liste!</button>
+      <input type="number" id="menge-eingeben" value="1" min="1" max="500" title="Menge auswählen..." />
+      <button type="submit" id="input-absenden" title="Klicke um Eintrag zu speichern!" disabled="disabled">Auf die Liste!</button>
     </form>
     <div class="liste">
       <div class="tabelle">
