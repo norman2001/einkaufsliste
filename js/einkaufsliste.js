@@ -40,6 +40,11 @@ function createNewRow (artikel, einheit, menge) {
   var newRow = document.createElement('div')
   newRow.classList.add('tabellenzeile')
 
+  var newCheckbox = document.createElement('input')
+  newCheckbox.setAttribute('type', 'checkbox')
+  newCheckbox.classList.add('checkbox')
+  newRow.appendChild(newCheckbox)
+
   var newArtikel = document.createElement('div')
   newArtikel.classList.add('artikel')
   newArtikel.textContent = artikel
@@ -79,6 +84,7 @@ function handleFormSubmit (e) {
 
   var menge = form.querySelector('#menge-eingeben').value
   // Creating new table row (invisible)
+
   var newRow = createNewRow(artikel, einheit, menge)
   // Appending new row to existing container (visible)
   table.appendChild(newRow)

@@ -56,7 +56,7 @@ footer {
 .artikel {
   display: inline-block;
   width: 60%;
-  padding-top: 1em;
+  padding-top: 0.6em;
   text-align: left;
 }
 
@@ -116,4 +116,33 @@ input#menge-eingeben {
 select {
     width: 20%;
     height: 2.9em;
+}
+
+.ok {
+    display: inline-block;
+    width: 5%;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+input#checkbox {
+    display: inline-block;
+    padding-top: 0.6em;
+    width: 5%;
+    font-size: 1em;
+}
+
+.tabellenzeile::checked div {
+    text-decoration-line: dotted;
+}
+
+input.checkbox {
+    display: inline-block;
+    width: 5%;
+    font-size: 1em;
+}
+
+input.checkbox:checked ~ div {
+    color: darkgrey;
+    font-weight: 100;
 }
