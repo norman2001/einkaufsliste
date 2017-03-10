@@ -41,7 +41,7 @@ button#input-absenden {
 }
 
 .liste {
-  margin-top: 3em;
+  margin-top: 2em;
   background-color: white;
   color: #000;
 }
@@ -55,38 +55,38 @@ footer {
 
 .artikel {
   display: inline-block;
-  width: 60%;
+  width: 25.4em;
   padding-top: 0.6em;
   text-align: left;
 }
 
 .einheit {
   display: inline-block;
-  width: 10%;
+  width: 5em;
 }
 
 .menge {
   display: inline-block;
-  width: 10%;
+  width: 5em;
+  text-align: center;
 }
 
 .spalte2 {
   display: inline-block;
-  width: 10%;
+  width: 4em;
   border-bottom: 1px solid #ccc;
 }
 
 .spalte1 {
   display: inline-block;
-  width: 10%;
   border-bottom: 1px solid #ccc;
+  width: 5em;
 }
 
 .spalte {
   display: inline-block;
-  width: 60%;
   border-bottom: 1px solid #ccc;
-  text-align: left;
+  width: 25em;
 }
 
 input.einheit-eingeben {
@@ -105,10 +105,6 @@ input#menge-eingeben {
   padding-left: 0.5em;
 }
 
-.tabelle {
-  text-align: center;
-}
-
 .inhalt {
   padding-bottom: 1.5em;
 }
@@ -120,9 +116,8 @@ select {
 
 .ok {
     display: inline-block;
-    width: 5%;
     border-bottom: 1px solid #ccc;
-    text-align: left;
+    width: 1.8em;
 }
 
 input#checkbox {
@@ -138,11 +133,22 @@ input#checkbox {
 
 input.checkbox {
     display: inline-block;
-    width: 5%;
     font-size: 1em;
+    width: 2em;
+    margin: 0;
 }
 
 input.checkbox:checked ~ div {
     color: darkgrey;
     font-weight: 100;
+}
+
+i.fa.fa-pencil {
+    width: 3em;
+    text-align: right;
+}
+
+i.fa.fa-trash {
+    width: 3em;
+    text-align: right;
 }

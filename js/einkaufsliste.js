@@ -60,6 +60,14 @@ function createNewRow (artikel, einheit, menge) {
   newMenge.textContent = menge
   newRow.appendChild(newMenge)
 
+  var newPencil = document.createElement('i')
+  newPencil.classList.add('fa', 'fa-pencil')
+  newRow.appendChild(newPencil)
+
+  var newTrash = document.createElement('i')
+  newTrash.classList.add('fa', 'fa-trash')
+  newRow.appendChild(newTrash)
+
   return newRow
 }
 
