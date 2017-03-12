@@ -10,38 +10,37 @@
   <!-- Ermöglichen des Zoomens auf z.B. Mobilgeräten: -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Einbinden der Font-Awesome Icons (z.B. Mülleimer und Edit-Stift) -->
-  <link rel="stylesheet" href="css/font-awesome.css"  type="text/css" media="screen" />
+  <link rel="stylesheet" href="css/font-awesome.css" type="text/css" media="screen" />
   <!--Einbinden der eigenen CSS-Datei -->
   <link rel="stylesheet" href="css/einkaufsliste.css" type="text/css" media="screen">
-  
   <!-- Es muss im 'head' immer genau ein 'title' angegeben werden: -->
   <title>Einkaufsliste</title>
 </head>
 
 <body>
   <h1>Einkaufsliste</h1>
-  <div class="inhalt">
+  <div class="content">
     <form id="artikelForm">
-      <input type="text" class="artikel-eingeben" placeholder="Artikel eingeben" />
+      <input type="text" id="artikel-eingeben" placeholder="Artikel eingeben" />
+
       <select id="einheit-auswaehlen" size="1" title="Einheit auswählen...">
         <option value="">Bitte ausw&auml;hlen...</option>
         <option value="St&uuml;ck">St&uuml;ck</option>
         <option value="Gramm">Gramm</option>
         <option value="Kilogramm">Kilogramm</option>
       </select>
+
       <input type="number" id="menge-eingeben" value="1" min="1" max="500" title="Menge auswählen..." />
       <button type="submit" id="input-absenden" title="Klicke um Eintrag zu speichern!" disabled="disabled">Auf die Liste!</button>
     </form>
-    <div class="liste">
-      <div class="tabelle">
-        <!-- Tabellenkopf -->
-        <div class="tabellenkopf">
-          <div class="ok">OK</div>
-          <div class="spalte">Artikel</div>
-          <div class="spalte1">Einheit</div>
-          <div class="spalte2">Menge</div>
-        </div>
+    <div id="table">
+      <div id="tableHead">
+        <div class="ok">OK</div>
+        <div class="spalte">Artikel</div>
+        <div class="spalte1">Einheit</div>
+        <div class="spalte2">Menge</div>
       </div>
+      <div id="tableTail"> </div>
     </div>
   </div>
   <script type="text/javascript" src="js/einkaufsliste.js"></script>

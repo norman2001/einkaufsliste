@@ -23,7 +23,7 @@ h1 {
   border-bottom: 1px solid #cccccc;
 }
 
-input.artikel-eingeben {
+input#artikel-eingeben {
   line-height: 2em;
   width: 40%;
   text-align: left;
@@ -40,17 +40,10 @@ button#input-absenden {
   padding-right: 1em;
 }
 
-.liste {
+#table {
   margin-top: 2em;
   background-color: white;
   color: #000;
-}
-
-footer {
-  text-align: center;
-  font-size: 0.8em;
-  margin-top: 2em;
-  font-weight: 100;
 }
 
 .artikel {
@@ -105,7 +98,7 @@ input#menge-eingeben {
   padding-left: 0.5em;
 }
 
-.inhalt {
+.content {
   padding-bottom: 1.5em;
 }
 
@@ -127,7 +120,7 @@ input#checkbox {
     font-size: 1em;
 }
 
-.tabellenzeile::checked div {
+.row::checked div {
     text-decoration-line: dotted;
 }
 
