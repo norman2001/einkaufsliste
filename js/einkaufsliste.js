@@ -77,7 +77,7 @@ function createNewRow (artikel, einheit, menge) {
 function handleFormSubmit (e) {
   // Verhindern des Absenden und Neuladen durch den Browser
   e.preventDefault()
-  // Container for new table rows
+    // Container for new table rows
   var table = document.querySelector('#tableTail')
 
   // Extracting user data from fields
@@ -86,22 +86,22 @@ function handleFormSubmit (e) {
 
   // DOM-Node = 'select' (HTML-Code)
   var selectEinheit = form.querySelector('#einheit-auswaehlen')
-  // DOM-Nodes = 'options' (HTML-Code)
+    // DOM-Nodes = 'options' (HTML-Code)
   var options = selectEinheit.children
-  // Currently selected index of 'options'
+    // Currently selected index of 'options'
   var selectedIndex = selectEinheit.selectedIndex
-  // Read value from selected option tag
+    // Read value from selected option tag
   var einheit = options[selectedIndex].value
 
   var menge = form.querySelector('#menge-eingeben').value
-  // Creating new table row (invisible)
+    // Creating new table row (invisible)
 
   var newRow = createNewRow(artikel, einheit, menge)
-  // Appending new row to existing container (visible)
+    // Appending new row to existing container (visible)
   table.appendChild(newRow)
-  // Clearing input fields
+    // Clearing input fields
   form.reset()
-  // Set cursor into first input field
+    // Set cursor into first input field
   form.querySelector('#artikel-eingeben').focus()
 }
 
@@ -114,7 +114,9 @@ function handleRowClick (e) {
     // https://wiki.selfhtml.org/wiki/Data-Attribut
   if (button.dataset.type === 'delete') {
     var row = getRowOfButton(button)
-    if (row) deleteRow(tableTail, row)
+    if (row) queryDelete(tableTail, row)
+
+    // deleteRow(tableTail, row)
   }
   // If source element is 'Edit' button
   if (button.dataset.type === 'edit') {
@@ -123,13 +125,20 @@ function handleRowClick (e) {
       var values = getValuesFromRow(row)
         // Name für neue Funktion wählen und aufrufen
       insertValuesIntoForm(values)
-      // Entfernen der Row, damit sie nach dem Editieren nicht doppelt vorhanden ist
+        // Entfernen der Row, damit sie nach dem Editieren nicht doppelt vorhanden ist
       deleteRow(tableTail, row)
     }
   }
 
   // Else do nothing
   // möglich wäre 'return' - aber unnötig
+}
+
+function queryDelete (tableTail, row) {
+  var query = window.confirm('Eintrag wirklich löschen?')
+  if (query === true) {
+    deleteRow(tableTail, row)
+  }
 }
 
 function deleteRow (tableTail, row) {
