@@ -43,31 +43,31 @@ function createNewRow (artikel, einheit, menge) {
 
   var newCheckbox = document.createElement('input')
   newCheckbox.setAttribute('type', 'checkbox')
-  newCheckbox.classList.add('checkbox')
+  newCheckbox.classList.add('checkbox', 'col-lg-1', 'col-md-1')
   newRow.appendChild(newCheckbox)
 
   var newArtikel = document.createElement('div')
-  newArtikel.classList.add('artikel')
+  newArtikel.classList.add('artikel', 'col-lg-4', 'col-md-5')
   newArtikel.textContent = artikel
   newRow.appendChild(newArtikel)
 
   var newEinheit = document.createElement('div')
-  newEinheit.classList.add('einheit')
+  newEinheit.classList.add('einheit', 'col-lg-3', 'col-md-4')
   newEinheit.textContent = einheit
   newRow.appendChild(newEinheit)
 
   var newMenge = document.createElement('div')
-  newMenge.classList.add('menge')
+  newMenge.classList.add('menge', 'col-lg-2', 'col-md-2')
   newMenge.textContent = menge
   newRow.appendChild(newMenge)
 
   var newEditButton = document.createElement('i')
-  newEditButton.classList.add('fa', 'fa-pencil')
+  newEditButton.classList.add('fa', 'fa-pencil', 'col-lg-1', 'col-md-6')
   newEditButton.setAttribute('data-type', 'edit')
   newRow.appendChild(newEditButton)
 
   var newDeleteButton = document.createElement('i')
-  newDeleteButton.classList.add('fa', 'fa-trash')
+  newDeleteButton.classList.add('fa', 'fa-trash', 'col-lg-1', 'col-md-6')
   newDeleteButton.setAttribute('data-type', 'delete')
   newRow.appendChild(newDeleteButton)
 
