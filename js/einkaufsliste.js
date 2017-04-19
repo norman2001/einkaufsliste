@@ -2,6 +2,91 @@ document.querySelector('#artikelForm').addEventListener('keyup', toggleButton)
 document.querySelector('#artikelForm').addEventListener('change', toggleButton)
 document.querySelector('#artikelForm').addEventListener('submit', handleFormSubmit)
 document.querySelector('#tableTail').addEventListener('click', handleRowClick)
+document.querySelector('#loadFile').addEventListener('change', loadFile)
+document.querySelector('#saveList').addEventListener('click', readTableForStorage)
+
+// window.webkitRequestFileSystem(window.PERSISTENT, 2048 * 2048, saveFile)
+
+// navigator.webkitPersistentStorage.requestQuota(2048 * 2048, function () {
+//   window.webkitRequestFileSystem(window.PERSISTENT, 2048 * 2048, saveFile)
+// })
+
+function readTableForStorage () {
+  // Erstelle ein Array mit den Objekten
+
+  // Selektiere den DOM-Node
+  var rows = document.querySelectorAll('.row')
+  // Erstelle ein Array
+  var schoki = []
+  // Arbeite so lange, bis alle Einträge ausgelesen sind
+  for (var i = 0; i < rows.length; i++) {
+    //  Eine Row aus allen Rows mit dem jeweiligen Index
+    var row = rows[i]
+    // Bekomme Einträge über die Funktion 'getValuesFromRow'
+    var entries = getValuesFromRow(row)
+    // Deklariere und definiere das Objekt. Es soll so aussehen:
+    var obj = {
+      artikel: entries[0], einheit: entries[1], menge: parseInt(entries[2])
+    }
+    // Das Objekt pushe ins Array
+    schoki.push(obj)
+  }
+  // Zeige das Array ,im JSON-Format konvertiert, in der Console an
+  console.log(JSON.stringify(schoki, null, '\t'))
+  // Rufe die Funktion saveFile auf und übergib das konvertierte Array
+  saveFile(JSON.stringify(schoki, null, '\t'))
+}
+
+function saveFile (jsonString) {
+ /* jsonString ist ein Parameter, der nur innerhalb der
+  Funktion saveFile verwand wird */
+
+  // Deklariere die Variable und weise (definiere) sie
+                // Datenformat; Kodierungsformat + vorgefertigte Funktion encodeURIComponent
+                                                      // übergib die innere Variable jasonString
+  var content = 'data:application/json; charset=utf-8,' + encodeURIComponent(jsonString)
+  // Öffne ein neues Fenster und zeige den Inhalt der Variable
+  window.open(content)
+}
+
+function loadFile () {
+  // Selektiere den DOM-Node anhand der ElementID,
+  // wo die Daten der ausgewählten Datei angezeigt werden sollen
+  var selectedFile = document.getElementById('loadFile').files[0]
+  // Zeige die ausgewählten Daten an der Console an
+  console.log(selectedFile)
+  // Deklariere die Variable reader und erstelle einen neuen Konstruktor
+  var reader = new FileReader()
+  /* Das onload Event wird gefeuert, wenn der Inhalt mittels readAsArrayBuffer,
+  readAsBinaryString, readAsDataURL or readAsText verfügbar ist. */
+  reader.onload = function (event) {
+    // The file's text will be printed here
+    console.log(event.target.result)
+    /* Initialisiere die Variable contentOfFile und parse den Json-String
+    in ein JavaScript-Object */
+    var contentOfFile = JSON.parse(event.target.result)
+    /* rufe die Funktion readContentOfFile auf und übergib ihr die Variable contentOfFile
+    (somit also den geparsten Dateiinhalt) */
+    readContentOfFile(contentOfFile)
+  }
+  // Die Methode readAsText liest den Inhalt der ausgewählten Datei
+  reader.readAsText(selectedFile)
+}
+
+function readContentOfFile (json) {
+  // Selektiere den DOM-Node tabletail und weise es der Variable table zu
+  var table = document.querySelector('#tableTail')
+  // eine for-Schleife um das ganze Array zu durchlaufen
+  for (var i = 0; i < json.length; i++) {
+    // deklariere die Variable obj und bekomme das i-te Element des Arrays
+    var obj = json[i]
+
+    // call function createNewRow und gib mir die Werte der 'keys' (artikel, einheit, menge)
+    var newRow = createNewRow(obj.artikel, obj.einheit, obj.menge)
+    // Appending new row to existing container (visible)
+    table.appendChild(newRow)
+  }
+}
 
 function toggleButton (e) {
   var form = this
@@ -75,7 +160,7 @@ function createNewRow (artikel, einheit, menge) {
 }
 
 function handleFormSubmit (e) {
-  // Verhindern des Absenden und Neuladen durch den Browser
+  // Prevent submit and reload by browser
   e.preventDefault()
     // Container for new table rows
   var table = document.querySelector('#tableTail')
@@ -94,8 +179,8 @@ function handleFormSubmit (e) {
   var einheit = options[selectedIndex].value
 
   var menge = form.querySelector('#menge-eingeben').value
-    // Creating new table row (invisible)
 
+  // Call function 'createNewRow()'
   var newRow = createNewRow(artikel, einheit, menge)
     // Appending new row to existing container (visible)
   table.appendChild(newRow)
