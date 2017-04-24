@@ -1,0 +1,27 @@
+[
+	{
+		"artikel": "Karotte",
+		"einheit": "Kilogramm",
+		"menge": 2
+	},
+	{
+		"artikel": "Salami",
+		"einheit": "Stück",
+		"menge": 1
+	},
+	{
+		"artikel": "Milch",
+		"einheit": "Stück",
+		"menge": 12
+	},
+	{
+		"artikel": "Sägespäne",
+		"einheit": "Kilogramm",
+		"menge": 10
+	},
+	{
+		"artikel": "Schokolade",
+		"einheit": "Kilogramm",
+		"menge": 20
+	}
+]
