@@ -74,7 +74,7 @@ function loadFile () {
 }
 
 function readContentOfFile (json) {
-  // Selektiere den DOM-Node tabletail und weise es der Variable table zu
+  // Selektiere den DOM-Node tableTail und weise es der Variable table zu
   var table = document.querySelector('#tableTail')
   // eine for-Schleife um das ganze Array zu durchlaufen
   for (var i = 0; i < json.length; i++) {
@@ -124,15 +124,20 @@ function toggleButton (e) {
 function createNewRow (artikel, einheit, menge) {
   // Create new row with values
   var newRow = document.createElement('div')
-  newRow.classList.add('row')
+  newRow.classList.add('artikelRow', 'row')
 
+  var newCheckDiv = document.createElement('div')
+  newCheckDiv.classList.add('checkbox', 'col-md-1', 'col-lg-1')
+  var newLabel = document.createElement('label')
+  newLabel.textContent('Ok')
   var newCheckbox = document.createElement('input')
-  newCheckbox.setAttribute('type', 'checkbox')
-  newCheckbox.classList.add('checkbox', 'col-lg-1', 'col-md-1')
-  newRow.appendChild(newCheckbox)
+  newCheckbox.setAttribute('type', 'checkbox'
+  newRow.appendChild(newCheckDiv)
+  newCheckDiv.appendChild(newLabel)
+  newLabel.appendChild(newCheckbox)
 
-  var newArtikel = document.createElement('div')
-  newArtikel.classList.add('artikel', 'col-lg-4', 'col-md-5')
+  var newArtikelDiv = document.createElement('div')
+  newArtikel.classList.add('eintrag', 'col-md-5', 'col-lg-5')
   newArtikel.textContent = artikel
   newRow.appendChild(newArtikel)
 
