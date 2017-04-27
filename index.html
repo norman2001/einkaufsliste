@@ -1,9 +1,7 @@
 <!doctype html>
 <html lang="de">
-<!-- Der 'head' kommt nur einmal vor und enthält Metadaten (Daten zum besseren Parsen der Datei oder die Verwaltung des Dateiinhalts), Links zu den css-Dateien, zur Startseite o.a., sowie EINEN Titel -->
 
 <head>
-  <!-- Festlegen der Zeichencodierung: -->
   <meta charset="utf-8">
   <meta name="description" content="Die Anfänge, JavaScript zu erlernen">
   <meta name="keywords" content="liste, einkauf, einkaufsliste">
@@ -19,36 +17,163 @@
 </head>
 
 <body>
-  <div class="container-fluid">
-    <h1>Einkaufsliste</h1>
-    <div class="content">
-      <form id="artikelForm">
-        <input type="text" id="artikel-eingeben" placeholder="Artikel eingeben" />
-        <select id="einheit-auswaehlen" size="1" title="Einheit auswählen...">
-          <option value="">Bitte ausw&auml;hlen...</option>
-          <option value="St&uuml;ck">St&uuml;ck</option>
-          <option value="Gramm">Gramm</option>
-          <option value="Kilogramm">Kilogramm</option>
-        </select>
-        <input type="number" id="menge-eingeben" value="1" min="1" max="500" title="Menge auswählen..." />
-        <button type="submit" id="input-absenden" title="Klicke um Eintrag zu speichern!" disabled="disabled">Auf die Liste!</button>
-      </form>
-      <div id="table">
-        <div id="tableHead" class="row">
-          <div class="ok col-lg-1 col-md-1">OK</div>
-          <div class="spalte col-lg-4 col-md-5">Artikel</div>
-          <div class="spalte1 col-lg-3 col-md-4">Einheit</div>
-          <div class="spalte2 col-lg-2 col-md-2">Menge</div>
-        </div>
-        <div id="tableTail"></div>
+  <div class="content-fluid">
+    <div class="row headRow">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <header>Einkaufsliste</header>
       </div>
     </div>
+    <div class="row formRow">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <form id="artikelForm" class="form-inline">
+          <div class="form-group artikelEintrag col-md-3">
+            <label for="artikel-eingeben">Artikel</label>
+            <input type="text" class="form-control" id="artikel-eingeben" placeholder="Artikel eingeben">
+          </div>
+          <div class="form-group einheitAuswahl col-xs-6 col-md-3">
+            <label for="einheit-auswaehlen">Einheit</label>
+            <select type="text" class="form-control" id="einheit-auswaehlen" placeholder="Einheit auswählen">
+              <option value="">Bitte ausw&auml;hlen...</option>
+              <option value="St&uuml;ck">St&uuml;ck</option>
+              <option value="Gramm">Gramm (g)</option>
+              <option value="Kilogramm">Kilogramm (kg)</option>
+            </select>
+          </div>
+          <div class="form-group mengeEintrag col-xs-6 col-md-3">
+            <label for="menge-eingeben">Menge</label>
+            <input type="text" class="form-control" id="menge-eingeben" value="1" min="1" placeholder="Menge eingeben">
+          </div>
+          <button type="submit" id="input-absenden" class="btn btn-default col-xs-12 col-sm-12 col-md-3 col-lg-3" disabled="disabled">Auf die Liste!</button>
+        </form>
+      </div>
+    </div>
+    <div id="tableTail" class="row tableRow">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="artikelRow row">
+          <div class="checkbox col-md-1 col-lg-1">
+            <label>
+              <input type="checkbox"> OK
+            </label>
+          </div>
+          <div class="eintrag col-md-5 col-lg-5">
+            <span>2</span>
+            <span>kg</span>
+            <span>Zucker</span>
+          </div>
+          <div class="iconPen hidden-xs hidden-sm col-md-1 col-lg-1">
+            <i class="fa fa-pencil" data-type="edit"></i>
+          </div>
+          <div class="iconBin hidden-xs hidden-sm col-md-1 col-lg-1">
+            <i class="fa fa-trash" data-type="delete"></i>
+          </div>
+        </div>
+        <div class="artikelRow row">
+          <div class="checkbox col-md-1 col-lg-1">
+            <label>
+              <input type="checkbox"> OK
+            </label>
+          </div>
+          <div class="eintrag col-lg-5">
+            <span>2</span>
+            <span>kg</span>
+            <span>Zucker</span>
+          </div>
+          <div class="iconPen hidden-xs hidden-sm col-md-1 col-lg-1">
+            <i class="fa fa-pencil" data-type="edit"></i>
+          </div>
+          <div class="iconBin hidden-xs hidden-sm col-md-1 col-lg-1">
+            <i class="fa fa-trash" data-type="delete"></i>
+          </div>
+        </div>
+        <div class="artikelRow row">
+          <div class="checkbox col-md-1 col-lg-1">
+            <label>
+              <input type="checkbox"> OK
+            </label>
+          </div>
+          <div class="eintrag col-lg-5">
+            <span>2</span>
+            <span>kg</span>
+            <span>Zucker</span>
+          </div>
+          <div class="iconPen hidden-xs hidden-sm col-md-1 col-lg-1">
+            <i class="fa fa-pencil" data-type="edit"></i>
+          </div>
+          <div class="iconBin hidden-xs hidden-sm col-md-1 col-lg-1">
+            <i class="fa fa-trash" data-type="delete"></i>
+          </div>
+        </div>
+        <div class="artikelRow row">
+          <div class="checkbox col-md-1 col-lg-1">
+            <label>
+              <input type="checkbox"> OK
+            </label>
+          </div>
+          <div class="eintrag col-lg-5">
+            <span>2</span>
+            <span>kg</span>
+            <span>Zucker</span>
+          </div>
+          <div class="iconPen hidden-xs hidden-sm col-md-1 col-lg-1">
+            <i class="fa fa-pencil" data-type="edit"></i>
+          </div>
+          <div class="iconBin hidden-xs hidden-sm col-md-1 col-lg-1">
+            <i class="fa fa-trash" data-type="delete"></i>
+          </div>
+        </div>
+        <div class="artikelRow row">
+          <div class="checkbox col-md-1 col-lg-1">
+            <label>
+              <input type="checkbox"> OK
+            </label>
+          </div>
+          <div class="eintrag col-lg-5">
+            <span>2</span>
+            <span>kg</span>
+            <span>Zucker</span>
+          </div>
+          <div class="iconPen hidden-xs hidden-sm col-md-1 col-lg-1">
+            <i class="fa fa-pencil" data-type="edit"></i>
+          </div>
+          <div class="iconBin hidden-xs hidden-sm col-md-1 col-lg-1">
+            <i class="fa fa-trash" data-type="delete"></i>
+          </div>
+        </div>
+        <div class="artikelRow row">
+          <div class="checkbox col-md-1 col-lg-1">
+            <label>
+              <input type="checkbox"> OK
+            </label>
+          </div>
+          <div class="eintrag col-lg-5">
+            <span>2</span>
+            <span>kg</span>
+            <span>Zucker</span>
+          </div>
+          <div class="iconPen hidden-xs hidden-sm col-md-1 col-lg-1">
+            <i class="fa fa-pencil" data-type="edit"></i>
+          </div>
+          <div class="iconBin hidden-xs hidden-sm col-md-1 col-lg-1">
+            <i class="fa fa-trash" data-type="delete"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row footRow">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <footer>
+          <div class="form-group col-xs-6">
+            <input type="file" id="loadFile">
+            <label for="loadFile">Datei laden</label>
+          </div>
+          <div class="form-group col-xs-6">
+          <button type="submit" id="saveList" class="btn btn-default col-xs-12 col-sm-12 col-md-12 col-lg-12">Liste speichern</button>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/einkaufsliste.js"></script>
   </div>
-  <div id="file">
-    <input type="file" id="loadFile">open file</input>
-    <button type="file" id="saveList" title="Liste speichern">Liste speichern</input>
-  </div> 
-  <script type="text/javascript" src="js/einkaufsliste.js"></script>
 </body>
 
 </html>
