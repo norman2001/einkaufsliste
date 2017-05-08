@@ -1,8 +1,8 @@
 [
-  { "artikel":"Karotte", "einheit":"Kilogramm", "menge":2 },
-  { "artikel":"Salat", "einheit":"Kilogramm", "menge":1 },
+  { "artikel":"Karotte", "einheit":"Kilogramm (kg)", "menge":2 },
+  { "artikel":"Salat", "einheit":"Kilogramm (kg)", "menge":1 },
   { "artikel":"Salami", "einheit":"Stück", "menge":1 },
   { "artikel":"Milch", "einheit":"Stück", "menge":12 },
-  { "artikel":"Schokolade", "einheit":"Kilogramm", "menge":200 },
-  { "artikel":"Sägespäne", "einheit":"Kilogramm", "menge":10 }
+  { "artikel":"Schokolade", "einheit":"Kilogramm (kg)", "menge":200 },
+  { "artikel":"Sägespäne", "einheit":"Kilogramm (kg)", "menge":10 }
 ]
