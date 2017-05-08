@@ -8,7 +8,7 @@ body {
 }
 
 .artikelRow.row:nth-child(even) {
-  background-color: lightgrey;
+  background-color: #e6f2fb;
 }
 
 .row.footRow {
@@ -67,12 +67,11 @@ body {
     padding-right: 0;
 }
 
-/* Mittlere Geräte (Desktop-PCs, 992px und breiter) */
+/* Kleinere Geräte (Desktop-PCs, 768px und breiter) */
 
 @media (min-device-width: 768px) {
   .row.tableRow {
     padding-top: 7em;
-    padding-bottom: 7em;
     line-height: 2em;
   }
 }
@@ -81,8 +80,7 @@ body {
 
 @media (min-device-width: 992px) {
   .row.tableRow {
-    padding-top: 10em;
-    padding-bottom: 7em;
+    padding-top: 7em;
     line-height: 2em;
   }
 }
@@ -92,7 +90,6 @@ body {
 @media (min-device-width: 1200px) {
   .row.tableRow {
     padding-top: 7em;
-    padding-bottom: 7em;
     line-height: 2em;
   }
 }
@@ -104,4 +101,20 @@ input#checkbox {
 
 span{
   padding-right: 0.5em;
+}
+
+.form-group.einheitAuswahl.col-xs-6.col-sm-4.col-md-3 {
+    padding-right: 0.25em;
+}
+
+.form-group.mengeEintrag.col-xs-6.col-sm-4.col-md-3 {
+    padding-left: 0.25em;
+}
+
+input[type=checkbox]:checked ~label {
+    color: black;
+}
+
+input[type=checkbox] ~label {
+    color: grey;
 }

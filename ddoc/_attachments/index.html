@@ -14,6 +14,16 @@
   <link rel="stylesheet" href="css/einkaufsliste.css" type="text/css" media="screen">
   <!-- Es muss im 'head' immer genau ein 'title' angegeben werden: -->
   <title>Einkaufsliste</title>
+  <script type="text/javascript">
+  function stopRKey(evt) {
+    var evt = (evt) ? evt : ((event) ? event : null)
+    var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null)
+    if ((evt.keyCode == 13) && (node.type == "text")) {
+      return false
+    }
+  }
+  document.onkeypress = stopRKey
+  </script>
 </head>
 
 <body>
@@ -34,21 +44,21 @@
             <label for="einheit-auswaehlen">Einheit</label>
             <select type="text" class="form-control" id="einheit-auswaehlen" placeholder="Einheit auswählen">
               <option value="">Bitte ausw&auml;hlen...</option>
-              
-              <option value="Dose">Dose</option>
-              <option value="Flasche">Flasche</option>
-              <option value="Glas">Glas</option>
+              <option value="Bund/e">Bund</option>
+              <option value="Dose/n">Dose</option>
+              <option value="Flasche/n">Flasche</option>
+              <option value="Glas/Gläser">Glas</option>
               <option value="Gramm (g)">Gramm (g)</option>
-              <option value="Karton">Karton</option>
+              <option value="Karton/s">Karton</option>
               <option value="Kilogramm (kg)">Kilogramm (kg)</option>
               <option value="Liter (l)">Liter (l)</option>
               <option value="Milliliter (ml)">Milliliter (ml)</option>
-              <option value="Packung">Packung</option>
-              <option value="Rolle">Rolle</option>
-              <option value="Steige">Steige</option>
+              <option value="Packung/en">Packung</option>
+              <option value="Rolle/n">Rolle</option>
+              <option value="Steige/n">Steige</option>
               <option value="St&uuml;ck">St&uuml;ck</option>
-              <option value="Tube">Tube</option>
-              <option value="Tüte">Tüte</option>
+              <option value="Tube/n">Tube</option>
+              <option value="Tüte/n">Tüte</option>
             </select>
           </div>
           <div class="form-group mengeEintrag col-xs-6 col-sm-4 col-md-3">
@@ -57,27 +67,16 @@
           </div>
           <input type="hidden" id="formHiddenId" value="">
           <input type="hidden" id="formHiddenRev" value="">
-          <button type="submit" id="input-absenden" class="btn btn-primary col-xs-12 col-sm-12 col-md-3 col-lg-3" disabled="disabled">Auf die Liste!</button>
+          <button type="submit" id="input-absenden" class="btn btn-primary col-xs-12 col-sm-12 col-md-2 col-lg-2" disabled="disabled">Auf die Liste!</button>
         </form>
       </div>
     </div>
-
-    <div class="row tableRow" id="tableTail">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="tableEntry">
-      </div>
-    </div>
-
-    <div class="row footRow">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <footer>
-          <div class="form-group col-xs-6">
-            <button type="submit" id="printFile" class="btn btn-default col-xs-12 col-sm-12 col-md-12 col-lg-12">Liste drucken</button>
-          </div>
-        </footer>
-      </div>
-    </div>
-    <script type="text/javascript" src="js/einkaufsliste.js"></script>
   </div>
+  <div class="row tableRow" id="tableTail">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="tableEntry">
+    </div>
+  </div>
+  <script type="text/javascript" src="js/einkaufsliste.js"></script>
 </body>
 
 </html>

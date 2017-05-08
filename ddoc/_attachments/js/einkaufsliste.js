@@ -82,12 +82,13 @@ function createNewRow (artikel, einheit, menge, id, rev) {
   var newCheckbox = document.createElement('input')
   newCheckbox.setAttribute('type', 'checkbox')
   newCheckbox.setAttribute('id', 'checkbox')
-  var newSpan = document.createElement('span')
-  newSpan.textContent = 'OK'
+  var newLabel = document.createElement('label')
+  newLabel.htmlFor = 'checkbox'
+  newLabel.textContent = 'OK'
 
   newRow.appendChild(newCheckDiv)
   newCheckDiv.appendChild(newCheckbox)
-  newCheckDiv.appendChild(newSpan)
+  newCheckDiv.appendChild(newLabel)
 
   var newEintragDiv = document.createElement('div')
   newEintragDiv.classList.add('eintrag', 'col-sm-5', 'col-md-5', 'col-lg-5')
