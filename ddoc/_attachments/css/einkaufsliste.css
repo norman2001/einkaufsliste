@@ -51,62 +51,10 @@ body {
   background-color: white;
 }
 
-input[type="checkbox"] {
-  top: 50%;
-  transform: translateY(-85%);
-}
-
 .form-group.col-xs-6 {
   padding-left: 0;
   padding-right: 0;
 }
-
-#loadFile {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: 1;
-}
-
-#loadFile + label {
-  font-size: 14px;
-  font-weight: 400;
-  color: #333333;
-  background-color: #ffffff;
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  border-radius: 4px;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid #dedede;
-  width: 95%;
-}
-
-
-#loadFile:focus + label,
-#loadFile + label:hover {
-  background-color: #ccc;
-  border-color:#ccc;
-}
-
-#inputfile + label {
-  cursor: pointer;
-  /* "hand" cursor */
-}
-
 
 .form-group {
     margin-bottom: 7px;
@@ -121,12 +69,22 @@ input[type="checkbox"] {
 
 /* Mittlere Geräte (Desktop-PCs, 992px und breiter) */
 
-@media (min-device-width: 992px) {
+@media (min-device-width: 768px) {
   .row.tableRow {
     padding-top: 7em;
     padding-bottom: 7em;
     line-height: 2em;
+  }
 }
+
+/* Mittlere Geräte (Desktop-PCs, 992px und breiter) */
+
+@media (min-device-width: 992px) {
+  .row.tableRow {
+    padding-top: 10em;
+    padding-bottom: 7em;
+    line-height: 2em;
+  }
 }
 
 /*Große Geräte (Desktop-PCs, 1200px und breiter) */
@@ -137,4 +95,13 @@ input[type="checkbox"] {
     padding-bottom: 7em;
     line-height: 2em;
   }
+}
+
+input#checkbox {
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+span{
+  padding-right: 0.5em;
 }
