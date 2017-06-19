@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+var startBuild = require('../start-build')
+var argv = require('yargs')
+  .count('verbose')
+  .alias('v', 'verbose')
+  .usage('Usage: $0 [options]') // usage string of application.
+  .option('with-seed', {
+    description: 'Should the seed documents pushed?',
+    default: false,
+    required: false,
+    alias: 's'
+  })
+  .option('couchDB', {
+    description: 'Path to CouchDB, e.g. http://[username]:[password]@127.0.0.1:5984/vois',
+    required: true,
+    alias: 'c'
+  })
+  .option('h', {
+    alias: 'help',
+    description: 'display help message'
+  })
+  .help('help')
+  .showHelpOnFail(true, 'whoops, something went wrong! run with --help')
+  .argv
+
+var VERBOSE_LEVEL = argv.verbose
+
+function WARN () {
+  VERBOSE_LEVEL >= 0 && console.log.apply(console, arguments)
+}
+function INFO () {
+  VERBOSE_LEVEL >= 1 && console.log.apply(console, arguments)
+}
+function DEBUG () {
+  VERBOSE_LEVEL >= 2 && console.log.apply(console, arguments)
+}
+
+DEBUG(argv)
+
+DEBUG(startBuild)
+
+startBuild.push(argv.couchDB, argv.withSeed)
