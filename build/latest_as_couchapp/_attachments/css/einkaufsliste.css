@@ -1,0 +1,120 @@
+html,
+body {
+  height: 100%;
+}
+
+.row {
+  margin: 0;
+}
+
+.artikelRow.row:nth-child(even) {
+  background-color: #e6f2fb;
+}
+
+.row.footRow {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-flow: column;
+  border-top: 1px solid lightgrey;
+  padding-top: 0.5em;
+  background-color: white;
+}
+
+.row.headRow {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: white;
+  font-size: 1.5em;
+  height: 2em;
+  padding-top: 0.25em;
+}
+
+.row.formRow {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  top: 3.0em;
+  overflow: hidden;
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 0.5em;
+}
+
+.row.tableRow {
+  padding-top: 16em;
+  padding-bottom: 4em;
+  background-color: white;
+}
+
+.form-group.col-xs-6 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.form-group {
+    margin-bottom: 7px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.form-group.artikelEintrag.col-md-4 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Kleinere Geräte (Desktop-PCs, 768px und breiter) */
+
+@media (min-device-width: 768px) {
+  .row.tableRow {
+    padding-top: 7em;
+    line-height: 2em;
+  }
+}
+
+/* Mittlere Geräte (Desktop-PCs, 992px und breiter) */
+
+@media (min-device-width: 992px) {
+  .row.tableRow {
+    padding-top: 7em;
+    line-height: 2em;
+  }
+}
+
+/*Große Geräte (Desktop-PCs, 1200px und breiter) */
+
+@media (min-device-width: 1200px) {
+  .row.tableRow {
+    padding-top: 7em;
+    line-height: 2em;
+  }
+}
+
+input#checkbox {
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+span{
+  padding-right: 0.5em;
+}
+
+.form-group.einheitAuswahl.col-xs-6.col-sm-4.col-md-3 {
+    padding-right: 0.25em;
+}
+
+.form-group.mengeEintrag.col-xs-6.col-sm-4.col-md-3 {
+    padding-left: 0.25em;
+}
+
+input[type=checkbox]:checked ~label {
+    color: black;
+}
+
+input[type=checkbox] ~label {
+    color: grey;
+}
